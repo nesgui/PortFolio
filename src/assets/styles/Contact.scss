@@ -1,0 +1,137 @@
+.contact_wrapper svg {
+  font-size: 1em;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.contact-form {
+  padding-top: 20px;
+
+  button {
+    float: right;
+    background-color: white;
+    color: #050f0b;
+  }
+
+  button:hover {
+    background-color: #5000ca;
+    color: white;
+  }
+
+  fieldset {
+    background-color: white;
+  }
+}
+
+/* (fond bleu cassé annulé) */
+
+/* (carte retirée à la demande) */
+
+/* Améliorations d’accessibilité en mode sombre */
+.dark-mode .contact-form {
+  /* Fond des inputs */
+  .MuiInputBase-root {
+    background-color: rgba(255, 255, 255, 0.10);
+    color: #d0d0d0; /* texte gris lisible */
+    caret-color: #d0d0d0; /* curseur gris */
+  }
+
+  /* Libellés */
+  .MuiInputLabel-root {
+    color: rgba(208, 208, 208, 0.9);
+  }
+
+  /* Label flottant au focus = même couleur que la bordure focus */
+  .MuiInputLabel-root.Mui-focused,
+  .MuiFormLabel-root.Mui-focused {
+    color: #b388ff;
+  }
+
+  /* Bordures au repos (plus visibles) */
+  .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(234, 234, 234, 0.7);
+    border-width: 2px;
+  }
+
+  /* Bordures au hover */
+  .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(234, 234, 234, 0.85);
+    border-width: 2px;
+  }
+
+  /* Bordures focus */
+  .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #b388ff; /* accent plus clair pour plus de contraste */
+    border-width: 2px;
+  }
+
+  /* État erreur explicite */
+  .Mui-error .MuiOutlinedInput-notchedOutline {
+    border-color: #ff6b6b;
+    border-width: 2px;
+  }
+
+  /* Texte d’aide/erreur */
+  .MuiFormHelperText-root {
+    color: rgba(208, 208, 208, 0.85);
+  }
+
+  /* Placeholder */
+  input::placeholder,
+  textarea::placeholder {
+    color: rgba(208, 208, 208, 0.75); /* gris clair, pas blanc */
+    opacity: 1; /* pour Safari */
+  }
+
+  /* Placeholder pour MUI (certains navigateurs) */
+  .MuiInputBase-input::placeholder {
+    color: rgba(208, 208, 208, 0.75);
+    opacity: 1;
+  }
+
+  /* Autofill WebKit (Chrome/Edge) */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff;
+    -webkit-box-shadow: 0 0 0px 1000px rgba(255,255,255,0.10) inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  /* Bouton cohérent avec le thème sombre */
+  button {
+    background-color: #7c4dff;
+    color: #ffffff;
+  }
+  button:hover {
+    background-color: #6a3df0;
+    color: #ffffff;
+  }
+}
+
+label {
+  font-size: 1.2rem;
+  font-family: 'DomaineDispNar-Medium', sans-serif;
+}
+
+.form-flex {
+  display: flex;
+  gap: 15px;
+  padding-bottom: 15px;
+}
+
+.form-flex .MuiFormControl-root {
+  width: 100%;
+}
+
+form {
+  width: 100% !important;
+}
+
+.body-form {
+  width: 100% !important;
+  margin-bottom: 15px !important;
+}

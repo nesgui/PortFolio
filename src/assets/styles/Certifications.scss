@@ -1,0 +1,137 @@
+.certs-container {
+  padding: 5% 10%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: #111;
+}
+
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px; /* identique à compétences */
+}
+
+.cert {
+  align-items: center;
+  text-align: left;
+}
+
+.cert {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.certs-container svg {
+  color: currentColor;
+}
+
+@media (prefers-color-scheme: dark) {
+  .certs-container {
+    color: #f5f5f5;
+  }
+}
+
+/* Gestion explicite via classe de thème */
+.dark-mode .certs-container {
+  color: #f5f5f5;
+}
+
+/* Forcer des couleurs explicites sur les icônes si l'héritage est surchargé ailleurs */
+.certs-container .cert svg {
+  color: #000 !important; /* mode clair: icône très foncée, visible sur fond clair */
+}
+
+/* Cible directe via classe appliquée au composant */
+.certs-container .cert .cert-icon {
+  color: #000 !important;
+}
+
+/* Cibler explicitement la classe FontAwesome et forcer le remplissage des paths */
+.certs-container .cert .svg-inline--fa {
+  color: #000 !important;
+}
+.certs-container .cert .svg-inline--fa path,
+.certs-container .cert .svg-inline--fa g {
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .certs-container .cert svg {
+    color: #f5f5f5 !important; /* mode sombre: icône claire, visible sur fond sombre */
+  }
+}
+
+/* Ultra-spécifique à la section certifications */
+#certifications .certs-container .cert .cert-icon {
+  color: #000 !important;
+}
+#certifications .certs-container .cert .cert-icon path,
+#certifications .certs-container .cert .cert-icon g {
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .certs-container .cert .cert-icon {
+    color: #f5f5f5 !important;
+  }
+  .certs-container .cert .svg-inline--fa {
+    color: #f5f5f5 !important;
+  }
+  .certs-container .cert .svg-inline--fa path,
+  .certs-container .cert .svg-inline--fa g {
+    fill: currentColor !important;
+    stroke: currentColor !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #certifications .certs-container .cert .cert-icon {
+    color: #f5f5f5 !important;
+  }
+  #certifications .certs-container .cert .cert-icon path,
+  #certifications .certs-container .cert .cert-icon g {
+    fill: currentColor !important;
+    stroke: currentColor !important;
+  }
+}
+
+.dark-mode #certifications .certs-container .cert .cert-icon {
+  color: #f5f5f5 !important;
+}
+.dark-mode #certifications .certs-container .cert .cert-icon path,
+.dark-mode #certifications .certs-container .cert .cert-icon g {
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+.cert h3 {
+  margin: 0;
+}
+
+.cert p {
+  margin: 2px 0 0 0;
+  opacity: 0.85;
+}
+
+@media screen {
+  @media (max-width: 768px) {
+    .certs-container {
+      display: block;
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+
+    .certs-grid {
+      display: initial;
+    }
+
+    .cert {
+      padding-bottom: 5%;
+    }
+  }
+}
+
