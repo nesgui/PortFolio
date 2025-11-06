@@ -114,6 +114,12 @@ p, a, h1, h2, h3, h4, h5, label, button {
 
   .about-section {
     background-image: url("./assets/images/bg-light.png");
+    /* Corrige le comportement mobile (iOS/Android) où background-attachment: fixed casse l'affichage */
+    @media (max-width: 768px) {
+      background-attachment: scroll;
+      background-position: center;
+      background-size: cover;
+    }
   }
 
   .skills-container svg {
@@ -144,6 +150,35 @@ p, a, h1, h2, h3, h4, h5, label, button {
   .flex-chips .chip-title {
     color: #0d1116;
   }
+}
+
+/* Sécurité globale: garantir la visibilité du texte et du curseur dans TOUS les inputs */
+input,
+textarea,
+.MuiOutlinedInput-input,
+.MuiInputBase-input {
+  color: #111111 !important;
+  -webkit-text-fill-color: #111111 !important;
+  caret-color: #111111 !important;
+}
+
+.light-mode input,
+.light-mode textarea,
+.light-mode .MuiOutlinedInput-input,
+.light-mode .MuiInputBase-input {
+  color: #0d1116 !important;
+  -webkit-text-fill-color: #0d1116 !important;
+  caret-color: #0d1116 !important;
+}
+
+/* Assure lisibilité en mode sombre également */
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode .MuiOutlinedInput-input,
+.dark-mode .MuiInputBase-input {
+  color: #d0d0d0 !important;
+  -webkit-text-fill-color: #d0d0d0 !important;
+  caret-color: #d0d0d0 !important;
 }
 
 @media screen {

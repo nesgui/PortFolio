@@ -1,92 +1,149 @@
-.contact_wrapper svg {
-  font-size: 1em;
-  vertical-align: middle;
-  margin-right: 5px;
-}
-
-.contact-form {
-  padding-top: 20px;
-
-  button {
-    float: right;
-    background-color: white;
-    color: #050f0b;
-  }
-
-  button:hover {
-    background-color: #5000ca;
-    color: white;
-  }
-
-  fieldset {
-    background-color: white;
-  }
-}
-
-/* (fond bleu cassé annulé) */
-
-/* (carte retirée à la demande) */
-
-/* Améliorations d’accessibilité en mode sombre */
+/* Améliorations d'accessibilité en mode sombre */
 .dark-mode .contact-form {
   /* Fond des inputs */
   .MuiInputBase-root {
-    background-color: rgba(255, 255, 255, 0.10);
-    color: #d0d0d0; /* texte gris lisible */
-    caret-color: #d0d0d0; /* curseur gris */
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    caret-color: #ffffff;
+  }
+
+  /* Forcer le texte à l'intérieur des inputs en sombre */
+  .MuiOutlinedInput-root .MuiInputBase-input,
+  .MuiOutlinedInput-input,
+  .MuiInputBase-input,
+  input,
+  textarea {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    caret-color: #ffffff !important;
+    opacity: 1 !important;
   }
 
   /* Libellés */
   .MuiInputLabel-root {
-    color: rgba(208, 208, 208, 0.9);
+    color: rgba(255, 255, 255, 0.9);
   }
 
-  /* Label flottant au focus = même couleur que la bordure focus */
+  /* Label flottant au focus */
   .MuiInputLabel-root.Mui-focused,
   .MuiFormLabel-root.Mui-focused {
     color: #b388ff;
   }
 
-  /* Bordures au repos (plus visibles) */
+  /* Bordures au repos */
   .MuiOutlinedInput-notchedOutline {
-    border-color: rgba(234, 234, 234, 0.7);
-    border-width: 2px;
+    border-color: rgba(255, 255, 255, 0.5);
+    border-width: 1px;
   }
 
   /* Bordures au hover */
   .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
-    border-color: rgba(234, 234, 234, 0.85);
-    border-width: 2px;
+    border-color: rgba(255, 255, 255, 0.8);
+    border-width: 1px;
   }
 
   /* Bordures focus */
   .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-    border-color: #b388ff; /* accent plus clair pour plus de contraste */
+    border-color: #b388ff;
     border-width: 2px;
   }
 
-  /* État erreur explicite */
+  /* État erreur */
   .Mui-error .MuiOutlinedInput-notchedOutline {
     border-color: #ff6b6b;
-    border-width: 2px;
   }
 
-  /* Texte d’aide/erreur */
+  /* Texte d'aide/erreur */
   .MuiFormHelperText-root {
-    color: rgba(208, 208, 208, 0.85);
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  /* Placeholder */
+  .MuiInputBase-input::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+    opacity: 1;
+  }
+
+  /* Autofill */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0.2) inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  /* Bouton */
+  button {
+    background-color: #7c4dff;
+    color: #ffffff;
+
+    &:hover {
+      background-color: #6a3df0;
+      color: #ffffff;
+    }
+  }
+}
+
+/* Mode clair et disposition du formulaire */
+.contact_wrapper, .contact_wrapper * {
+  mix-blend-mode: normal !important;
+  filter: none !important;
+}
+
+.contact-form {
+  padding-top: 20px;
+  width: 100%;
+  margin: 0;
+
+  /* Fond et couleurs des inputs en clair */
+  .MuiInputBase-root {
+    background-color: #ffffff !important;
+    color: #050f0b !important;
+    caret-color: #050f0b;
+  }
+
+  /* Force la couleur du texte saisi */
+  .MuiOutlinedInput-root .MuiInputBase-input,
+  .MuiOutlinedInput-input,
+  .MuiInputBase-input,
+  input,
+  textarea {
+    color: #050f0b !important;
+    -webkit-text-fill-color: #050f0b !important;
+    caret-color: #050f0b !important;
+    opacity: 1 !important;
+  }
+
+  /* Libellés */
+  .MuiInputLabel-root {
+    color: rgba(5, 15, 11, 0.7);
+  }
+  .MuiInputLabel-root.Mui-focused,
+  .MuiFormLabel-root.Mui-focused {
+    color: #5000ca;
+  }
+
+  /* Bordures */
+  .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(5, 15, 11, 0.3);
+  }
+  .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(5, 15, 11, 0.5);
+  }
+  .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #5000ca;
   }
 
   /* Placeholder */
   input::placeholder,
-  textarea::placeholder {
-    color: rgba(208, 208, 208, 0.75); /* gris clair, pas blanc */
-    opacity: 1; /* pour Safari */
-  }
-
-  /* Placeholder pour MUI (certains navigateurs) */
+  textarea::placeholder,
   .MuiInputBase-input::placeholder {
-    color: rgba(208, 208, 208, 0.75);
-    opacity: 1;
+    color: rgba(5, 15, 11, 0.6) !important;
+    opacity: 1; /* Safari */
   }
 
   /* Autofill WebKit (Chrome/Edge) */
@@ -96,42 +153,39 @@
   textarea:-webkit-autofill,
   textarea:-webkit-autofill:hover,
   textarea:-webkit-autofill:focus {
-    -webkit-text-fill-color: #ffffff;
-    -webkit-box-shadow: 0 0 0px 1000px rgba(255,255,255,0.10) inset;
+    -webkit-text-fill-color: #050f0b !important;
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
     transition: background-color 5000s ease-in-out 0s;
   }
 
-  /* Bouton cohérent avec le thème sombre */
+  /* Disposition */
+  .form-flex {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    padding-bottom: 16px;
+  }
+
+  .MuiFormControl-root {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .body-form {
+    width: 100% !important;
+    margin-top: 8px !important;
+    margin-bottom: 16px !important;
+  }
+
   button {
-    background-color: #7c4dff;
-    color: #ffffff;
-  }
-  button:hover {
-    background-color: #6a3df0;
-    color: #ffffff;
+    float: right;
+    margin-top: 8px;
   }
 }
 
-label {
-  font-size: 1.2rem;
-  font-family: 'DomaineDispNar-Medium', sans-serif;
-}
-
-.form-flex {
-  display: flex;
-  gap: 15px;
-  padding-bottom: 15px;
-}
-
-.form-flex .MuiFormControl-root {
-  width: 100%;
-}
-
-form {
-  width: 100% !important;
-}
-
-.body-form {
-  width: 100% !important;
-  margin-bottom: 15px !important;
+/* Responsive: pile les champs sur mobile */
+@media (max-width: 640px) {
+  .contact-form .form-flex {
+    grid-template-columns: 1fr;
+  }
 }
